@@ -1,0 +1,9 @@
+{:itonami.blueprint/id "cloud-itonami-gtin-issuance"
+ :itonami.blueprint/name "Independent GS1 Prefix & GTIN Allocation Service"
+ :itonami.blueprint/domain :product-identity/gtin-issuance
+ :itonami.blueprint/license "AGPL-3.0-or-later"
+ :itonami.blueprint/social-impact [:small-manufacturer-access :retail-readiness :data-quality]
+ :itonami.blueprint/governor :gtin-allocation-governor
+ :itonami.blueprint/robotics false
+ :itonami.blueprint/required-technologies [:identity :forms :audit-ledger]
+ :itonami.blueprint/status :public-oss}

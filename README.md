@@ -41,7 +41,7 @@ The one externally-verifiable rule this governor enforces is the REAL
 **GS1 GTIN Modulo-10 check-digit algorithm** (GS1 General Specifications
 section 7.9 -- the same algorithm underlying every UPC-A / EAN-13(JAN) /
 EAN-8 / ITF-14 barcode in circulation). `gtinalloc.governor/check-digit`
-is verified in `test/gtinalloc/governor_test.clj` against two
+is verified in `test/gtinalloc/governor_test.kotoba` against two
 independently-known reference GTINs: UPC-A `036000291452` (Wrigley's gum,
 check digit `2`) and EAN-13 `4006381333931` (GS1's own commonly cited
 worked example, check digit `1`).
@@ -93,10 +93,10 @@ clojure -M:test    # governor contract (incl. the two real-GTIN check-digit
 
 | File | Role |
 |---|---|
-| `src/gtinalloc/store.cljc` | **Store** protocol -- `MemStore`; registered clients (company-prefix), issued GTINs, append-only audit ledger. |
-| `src/gtinalloc/advisor.cljc` | **Allocation Advisor** -- `mock-advisor` \\| `llm-advisor`; proposes a GTIN allocation. |
-| `src/gtinalloc/governor.cljc` | **GTIN Allocation Governor** -- the real GS1 check-digit algorithm + format/prefix/duplicate HARD checks + confidence gate. |
-| `src/gtinalloc/actor.cljc` | **GTINAllocationActor** -- langgraph-clj StateGraph. |
+| `src/gtinalloc/store.kotoba` | **Store** protocol -- `MemStore`; registered clients (company-prefix), issued GTINs, append-only audit ledger. |
+| `src/gtinalloc/advisor.kotoba` | **Allocation Advisor** -- `mock-advisor` \\| `llm-advisor`; proposes a GTIN allocation. |
+| `src/gtinalloc/governor.kotoba` | **GTIN Allocation Governor** -- the real GS1 check-digit algorithm + format/prefix/duplicate HARD checks + confidence gate. |
+| `src/gtinalloc/actor.kotoba` | **GTINAllocationActor** -- langgraph-clj StateGraph. |
 | `test/gtinalloc/*_test.clj` | governor contract (incl. real-GTIN check-digit fixtures) + actor lifecycle. |
 
 ## Required capabilities

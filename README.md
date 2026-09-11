@@ -35,7 +35,7 @@ is in the same digital/data-service exemption class as
 Governor as a langgraph-clj StateGraph (`intake -> advise -> govern ->
 decide -> commit/hold`, human-approval interrupt), modeled on
 cloud-itonami-isco-1324's supply-distribution actor. 17 tests / 32
-assertions green (`clojure -M:test`).
+assertions green (`kbb -M:test`).
 
 The one externally-verifiable rule this governor enforces is the REAL
 **GS1 GTIN Modulo-10 check-digit algorithm** (GS1 General Specifications
@@ -85,7 +85,7 @@ per-GTIN duplication, not a shrinking allocatable-range counter).
 ## Run
 
 ```bash
-clojure -M:test    # governor contract (incl. the two real-GTIN check-digit
+kbb -M:test    # governor contract (incl. the two real-GTIN check-digit
                     # fixtures) + actor lifecycle, 17 tests / 32 assertions
 ```
 
